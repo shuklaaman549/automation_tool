@@ -1,19 +1,25 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
-import os
+# Set up Chrome options
+chrome_options = Options()
+chrome_options.add_argument('--headless')  # Run Chrome in headless mode
+chrome_options.add_argument('--no-sandbox')  # Required for running in some environments
+chrome_options.add_argument('--disable-dev-shm-usage')  # Overcomes limited resource problems
+chrome_options.add_argument('--disable-gpu')  # Disables GPU hardware acceleration
+chrome_options.add_argument('--window-size=1920,1080')  # Set window size to avoid issues
 
+# Set up Chrome WebDriver
+driver = webdriver.Chrome(options=chrome_options)
 
-
-
-# Set up Chrome WebDriver (you need to download the WebDriver for your specific browser version)
-driver = webdriver.Chrome()
 # Navigate to LeetCode
 driver.get("https://leetcode.com/accounts/login/")
 
-# testing
+# Testing
 print(driver.title)
 
 # Log in (replace 'username' and 'password' with your credentials)
@@ -35,18 +41,18 @@ time.sleep(5)  # Adjust this wait time as needed
 driver.get("https://leetcode.com/problems/maximum-subarray/description/")
 time.sleep(5)
 
-
 # Resetting the code
-reset_button = driver.find_element(by = By.XPATH, value = "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[8]/div/div[1]/div[2]/button[4]")
+reset_button = driver.find_element(by=By.XPATH, value="/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[8]/div/div[1]/div[2]/button[4]")
 reset_button.click()
 time.sleep(2)
-# confirming the reset
-confirm_reset = driver.find_element(by = By.XPATH, value = "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[8]/div/div[1]/div[2]/div/div/div/div[2]/div/div[2]/div/div/div[2]/button")
+
+# Confirming the reset
+confirm_reset = driver.find_element(by=By.XPATH, value="/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[8]/div/div[1]/div[2]/div/div/div/div[2]/div/div[2]/div/div/div[2]/button")
 confirm_reset.click()
 time.sleep(2)
 
 # Submit the code
-submit_button = driver.find_element(by = By.XPATH, value = "/html/body/div[1]/div[2]/div/div/div[3]/div/div/div[1]/div/div/div[2]/div/div[2]/div/div[3]/div[3]/div/button")
+submit_button = driver.find_element(by=By.XPATH, value="/html/body/div[1]/div[2]/div/div/div[3]/div/div/div[1]/div/div/div[2]/div/div[2]/div/div[3]/div[3]/div/button")
 submit_button.click()
 
 # Wait for the submit process to complete
