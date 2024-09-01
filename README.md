@@ -28,7 +28,7 @@ You'll need to store your LeetCode credentials as secrets in your forked GitHub 
 
 ### 2.1 Alternate Way (Not Recommended)
 
-- If you want to avoid the hassle of setting up secrets, you can replace the credentials locally and make the repo *private*. However, this method is not recommended for security reasons.
+- If you want to avoid the hassle of setting up secrets, you can replace the credentials locally and make the repo **private**. However, this method is not recommended for security reasons.
 
 ```python
 # Log in (replace 'username' and 'password' with your credentials)
