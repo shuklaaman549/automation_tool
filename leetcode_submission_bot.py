@@ -20,7 +20,7 @@ chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
 # Set up Chrome WebDriver
 driver = webdriver.Chrome(options=chrome_options)
-driver.implicitly_wait(10)  # Implicit wait for elements to load
+driver.implicitly_wait(5)  # Implicit wait for elements to load
 
 # Navigate to LeetCode
 driver.get("https://leetcode.com/accounts/login/")
@@ -33,13 +33,13 @@ username = os.getenv("LEETCODE_USERNAME")
 password = os.getenv("LEETCODE_PASSWORD")
 
 # Wait for the username input field to be present
-username_input = WebDriverWait(driver, 10).until(
+username_input = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.NAME, "login"))
 )
 username_input.send_keys(username)
 
 # Wait for the password input field to be present
-password_input = WebDriverWait(driver, 10).until(
+password_input = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.NAME, "password"))
 )
 password_input.send_keys(password)
@@ -53,25 +53,25 @@ driver.get("https://leetcode.com/problems/maximum-subarray/description/")
 time.sleep(5)
 
 # Resetting the code
-reset_button = WebDriverWait(driver, 10).until(
+reset_button = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[8]/div/div[1]/div[2]/button[4]"))
 )
 reset_button.click()
 
 # Confirming the reset
-confirm_reset = WebDriverWait(driver, 10).until(
+confirm_reset = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[8]/div/div[1]/div[2]/div/div/div/div[2]/div/div[2]/div/div/div[2]/button"))
 )
 confirm_reset.click()
 
 # Submit the code
-submit_button = WebDriverWait(driver, 10).until(
+submit_button = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div/div/div[3]/div/div/div[1]/div/div/div[2]/div/div[2]/div/div[3]/div[3]/div/button"))
 )
 submit_button.click()
 
 # Wait for the submit process to complete
-time.sleep(10)
+time.sleep(5)
 
 # Take a screenshot for debugging
 driver.save_screenshot('screenshot.png')
