@@ -1,3 +1,12 @@
+# The cron syntax for GitHub Actions consists of five fields: minute hour day-of-month month day-of-week. The values are in UTC.
+
+# minute: The minute of the hour (0-59)
+# hour: The hour of the day (0-23, where 0 is midnight and 23 is 11 PM)
+# day-of-month: The day of the month (1-31)
+# month: The month (1-12)
+# day-of-week: The day of the week (0-6, where 0 is Sunday)
+
+
 name: Daily LeetCode Submission
 
 on:
