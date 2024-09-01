@@ -4,32 +4,33 @@ This project automates the daily submission of LeetCode problems using GitHub Ac
 
 ## Introduction
 
-This repository hosts a script that automates the process of solving and submitting a LeetCode problem daily. The automation is set up using GitHub Actions and Selenium. The submission is triggered daily by a scheduled cron job, ensuring that you maintain your streak and practice regularly. Also the chrome is run in headless mode and wait times have been reduced at their is 1min limit for github actions in free tier.
+This repository hosts a script that automates the process of solving and submitting a LeetCode problem daily. The automation is set up using GitHub Actions and Selenium. The submission is triggered daily by a scheduled cron job, ensuring that you maintain your streak and practice regularly. The script runs Chrome in headless mode, and wait times have been optimized to work within the 1-minute limit for GitHub Actions in the free tier.
 
 ## How to Set It Up
 
-### 1. Clone the Repository
+### 1. Fork the Repository
 
-Start by cloning this repository to your local machine.
+Start by forking this repository to your GitHub account. This will create a copy of the project under your account, which you can easily configure and use.
 
-```bash
-git clone https://github.com/your-username/automatic_submission.git
-```
+1. Navigate to the top-right corner of this page and click on the "Fork" button.
+2. Choose your account as the destination for the fork.
 
 ### 2. Set Up GitHub Secrets
 
-You'll need to store your LeetCode credentials as secrets in your GitHub repository.
+You'll need to store your LeetCode credentials as secrets in your forked GitHub repository.
 
-1. Go to your repository on GitHub.
+1. Go to your forked repository on GitHub.
 2. Click on "Settings".
 3. Navigate to "Secrets and variables" > "Actions".
 4. Add the following secrets:
    - `LEETCODE_USERNAME`: Your LeetCode username.
    - `LEETCODE_PASSWORD`: Your LeetCode password.
 
-## 2.1 Alternate Way (Not Recommended)
-- If you are lazy i don't want soo much hasle just replace the credentials locally and make the repo *private*
-```
+### 2.1 Alternate Way (Not Recommended)
+
+- If you want to avoid the hassle of setting up secrets, you can replace the credentials locally and make the repo *private*. However, this method is not recommended for security reasons.
+
+```python
 # Log in (replace 'username' and 'password' with your credentials)
 username = "<username>"
 password = "<password>"
@@ -41,12 +42,13 @@ The script is currently scheduled to run daily at 9:00 PM IST (3:30 PM UTC). You
 
 ### 4. Run the Workflow
 
-Once everything is set up, the workflow will automatically run daily at the scheduled time. You can also trigger it manually from the GitHub Actions tab.
+Once everything is set up, the workflow will automatically run daily at the scheduled time. You can also trigger it manually from the GitHub Actions tab in your forked repository.
 
 ## Word of Caution
 
 - **Security**: Ensure that your LeetCode credentials are securely stored in GitHub Secrets. Never hardcode your credentials in the code.
 - **LeetCode Terms of Service**: Be aware of LeetCode's terms and conditions regarding automated submissions. Use this script responsibly.
 
-## Personal take
-- I don't support use of these type tools but i know it hurts real bad when you sleep early by mistake 😅 and break your looong streak.
+## Personal Take
+
+I don't support the use of these types of tools, but I understand it can be frustrating when you accidentally break a long streak by sleeping early. Use this responsibly and as a backup, not as a replacement for genuine problem-solving practice.
