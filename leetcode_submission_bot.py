@@ -3,6 +3,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
+import os
+
+
+
+
 # Set up Chrome WebDriver (you need to download the WebDriver for your specific browser version)
 driver = webdriver.Chrome()
 # Navigate to LeetCode
@@ -12,8 +17,8 @@ driver.get("https://leetcode.com/accounts/login/")
 print(driver.title)
 
 # Log in (replace 'username' and 'password' with your credentials)
-username = "beatmeloser"
-password = "ad2256as"
+username = os.getenv("LEETCODE_USERNAME")
+password = os.getenv("LEETCODE_PASSWORD")
 
 time.sleep(5)  # Adjust this wait time as needed
 username_input = driver.find_element(by=By.NAME, value="login")
