@@ -4,7 +4,7 @@ This project automates the daily submission of LeetCode problems using GitHub Ac
 
 ## Introduction
 
-This repository hosts a script that automates the process of solving and submitting a LeetCode problem daily. The automation is set up using GitHub Actions and Selenium. The submission is triggered daily by a scheduled cron job, ensuring that you maintain your streak and practice regularly. The script runs Chrome in headless mode, and wait times have been optimized to work within the 1-minute limit for GitHub Actions in the free tier.
+This repository hosts a script that automates the process of solving and submitting a LeetCode problem daily. The automation is set up using GitHub Actions and Selenium. The submission is triggered daily by a scheduled cron job, ensuring that you maintain your streak and practice regularly. The script runs Chrome in headless mode, and wait times have been optimized to work within the 1-minute limit for GitHub Actions in the free tier😅.
 
 ## How to Set It Up
 
@@ -51,4 +51,4 @@ Once everything is set up, the workflow will automatically run daily at the sche
 
 ## Personal Take
 
-I don't support the use of these types of tools, but I understand it can be frustrating when you accidentally break a long streak by sleeping early. Use this responsibly and as a backup, not as a replacement for genuine problem-solving practice.
+I don't support the use of these types of tools, but I understand it can be frustrating when you accidentally break a looong streak because you slept early accidently 😅. Use this responsibly and as a backup, not as a replacement for genuine problem-solving practice😎.
