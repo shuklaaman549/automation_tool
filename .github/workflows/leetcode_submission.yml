@@ -11,7 +11,7 @@ name: Daily LeetCode Submission
 
 on:
   schedule:
-    - cron: '25 10 * * *'  # Runs daily at 9:00 PM IST (3:30 PM UTC)
+    - cron: '23 10 * * *'  # Runs daily at 9:00 PM IST (3:30 PM UTC)
 
 jobs:
   run_script:
