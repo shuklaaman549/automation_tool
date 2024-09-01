@@ -1,4 +1,4 @@
-# Automatic LeetCode Submission
+# Automatic LeetCode Submission ![alt text](image.png)
 
 This project automates the daily submission of LeetCode problems using GitHub Actions and Selenium. The submissions are scheduled using cron syntax, making it easy to manage and automate your LeetCode streak.
 
