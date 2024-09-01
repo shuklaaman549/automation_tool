@@ -11,11 +11,13 @@ name: Daily LeetCode Submission
 
 on:
   schedule:
-    - cron: '30 9 * * *'  # Runs daily at 9:00 PM UTC
+    - cron: '25 10 * * *'  # Runs daily at 9:00 PM IST (3:30 PM UTC)
 
 jobs:
   run_script:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true  # Enforce Node.js 20 usage
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
