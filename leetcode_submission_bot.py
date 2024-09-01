@@ -32,6 +32,9 @@ print(driver.title)
 username = os.getenv("LEETCODE_USERNAME")
 password = os.getenv("LEETCODE_PASSWORD")
 
+# username = "beatmeloser"
+# password = "ad2256as"
+
 # Wait for the username input field to be present
 username_input = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.NAME, "login"))
@@ -45,36 +48,26 @@ password_input = WebDriverWait(driver, 5).until(
 password_input.send_keys(password)
 password_input.send_keys(Keys.RETURN)
 
+print("-------------------------------------- LOGIN COMPLETE --------------------------------------")
 # Wait for the login process to complete
 time.sleep(5)
 
 # Navigate to the submission page
 driver.get("https://leetcode.com/problems/maximum-subarray/description/")
 time.sleep(5)
+print("-------------------------------------- SUBMISSION PAGE --------------------------------------")
 
-# Resetting the code
-reset_button = WebDriverWait(driver, 5).until(
-    EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[8]/div/div[1]/div[2]/button[4]"))
-)
-reset_button.click()
-
-# Confirming the reset
-confirm_reset = WebDriverWait(driver, 5).until(
-    EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div/div/div[4]/div/div/div[8]/div/div[1]/div[2]/div/div/div/div[2]/div/div[2]/div/div/div[2]/button"))
-)
-confirm_reset.click()
 
 # Submit the code
 submit_button = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div/div/div[3]/div/div/div[1]/div/div/div[2]/div/div[2]/div/div[3]/div[3]/div/button"))
 )
 submit_button.click()
+print("-------------------------------------- CODE SUBMITTED --------------------------------------")
 
 # Wait for the submit process to complete
 time.sleep(5)
 
-# Take a screenshot for debugging
-driver.save_screenshot('screenshot.png')
-
 # Close the browser
 driver.close()
+print("-------------------------------------- DRIVEr CLOSED --------------------------------------")
